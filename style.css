@@ -1,43 +1,93 @@
+/* Base styles */
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  background-color: #000;
-  color: #fff;
-}
-
-header {
+  font-family: 'Segoe UI', sans-serif;
   background-color: #111;
-  padding: 20px;
-  text-align: center;
+  color: #f0f0f0;
 }
 
-.logo {
-  font-family: 'UnifrakturCook', cursive;
-  color: #D4AF37;
-  font-size: 3em;
-  margin: 0;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-}
-
-nav a:hover {
+a {
   color: #FFD700;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
-.intro {
-  padding: 40px;
+/* Hero section */
+.hero {
+  background: url('../images/hero.jpg') center/cover no-repeat;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero .overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  color: #FFD700;
+  text-shadow: 3px 3px 10px #000;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #ccc;
+}
+
+/* Events section */
+.events {
+  padding: 4rem 2rem;
   text-align: center;
 }
 
+.events h2 {
+  font-size: 2rem;
+  color: #FFD700;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 2rem;
+}
+
+.card {
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card p {
+  padding: 1rem;
+  color: #ddd;
+}
+
+/* Footer */
 footer {
-  background-color: #111;
-  color: #888;
+  background: #000;
+  padding: 2rem;
+  font-size: 0.9rem;
   text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
 }
