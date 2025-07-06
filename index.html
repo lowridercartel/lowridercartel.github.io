@@ -3,33 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lowrider Cartel</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>Low Rider Cartel</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-  <header class="hero">
-    <div class="overlay">
-      <h1>Lowrider Cartel</h1>
-      <p>Driven by Style • United by Culture</p>
-    </div>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Low Rider Cartel</div>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section class="events">
-    <h2>Gallery & Events</h2>
-    <div class="grid">
-      <div class="card"><img src="assets/images/event1.jpg" alt="Event 1"><p>Lowrider Cruise Night</p></div>
-      <div class="card"><img src="assets/images/event2.jpg" alt="Event 2"><p>Chrome & Hydraulics Show</p></div>
-      <div class="card"><img src="assets/images/event3.jpg" alt="Event 3"><p>Unity Street Meet</p></div>
+  <section id="home" class="hero">
+    <div class="content">
+      <h1>Hi There,<br>I'm <span class="highlight">Low Rider</span></h1>
+      <h2>I Am Into <span id="typing-text"></span></h2>
+      <a href="#about" class="btn">About Me</a>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="avatar">
+      <img src="avatar.png" alt="Avatar" />
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 Lowrider Cartel • Follow us on 
-      <a href="#">Instagram</a> & 
-      <a href="#">Facebook</a>
-    </p>
-  </footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
