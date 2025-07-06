@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+header {
+  background-color: #111;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo {
+  font-family: 'UnifrakturCook', cursive;
+  color: #D4AF37;
+  font-size: 3em;
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #FFD700;
+}
+
+.intro {
+  padding: 40px;
+  text-align: center;
+}
+
+footer {
+  background-color: #111;
+  color: #888;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}
