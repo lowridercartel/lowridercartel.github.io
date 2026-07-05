@@ -1,0 +1,47 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["main"] # change to "master" if your main branch is named master
+  workflow_dispatch # lets you run manually
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+env:
+  NODE_OPTIONS: "--no-deprecation" # hides the punycode warning
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # --- UNCOMMENT & EDIT BELOW IF YOU NEED TO BUILD ---
+      # - name: Setup Node
+      #   uses: actions/setup-node@v4
+      #   with: { node-version: 22 }
+      # - run: npm ci && npm run build
+      # --- END BUILD SECTION ---
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site files
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.' # use './dist' or './build' if your built files are there
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
