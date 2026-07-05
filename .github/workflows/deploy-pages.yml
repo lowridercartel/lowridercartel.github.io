@@ -2,8 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]  # or ["master"] if your branch is named master
-  workflow_dispatch:    # ← added missing colon here
+    branches: ["main"]
+  workflow_dispatch:    # ✅ Fixed: added missing colon
 
 permissions:
   contents: read
@@ -16,6 +16,7 @@ concurrency:
 
 env:
   NODE_OPTIONS: "--no-deprecation"
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true   # ✅ Forces Node 24 now
 
 jobs:
   deploy:
@@ -23,13 +24,14 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6   # ✅ Updated: Node 24 compatible
 
-      # --- Uncomment ONLY IF you need to build your site ---
+      # --- Uncomment if you build your site ---
       # - name: Setup Node.js
-      #   uses: actions/setup-node@v4
+      #   uses: actions/setup-node@v6   # ✅ Updated
       #   with:
       #     node-version: 22
       # - name: Install & Build
@@ -37,13 +39,13 @@ jobs:
       # --- End build section ---
 
       - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6   # ✅ Updated
 
       - name: Upload site files
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5   # ✅ Updated
         with:
-          path: '.'   # change to './dist' or './build' if using React/Vue/Vite
+          path: '.'   # change to './dist' or './build' for Vite/React/Vue
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@v5   # ✅ Latest stable
